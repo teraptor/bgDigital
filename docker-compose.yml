@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
 #  backend:
-#    image: bgDigital
+#    image: bgDigitalcd ../
 #    restart: always
 
   mongo:
@@ -13,8 +13,6 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
-    networks:
-      - reverse-proxy
 
   mongo-express:
     image: mongo-express
@@ -26,5 +24,3 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
       ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
       ME_CONFIG_BASICAUTH: false
-    networks:
-      - reverse-proxy
